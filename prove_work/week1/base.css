@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    
+
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    align-items: center;
+}
+
+
+h1, h2, h3{
+    font-family: 'Lora', serif;
+}
+
+header{
+    display: block;
+    text-align: center;
+}
+
+header h1 a{
+    color: #333;
+    text-decoration: none;
+    font-size: 2.5rem;  
+}
+header nav{
+    display: block;
+    list-style: none;
+    border-style: solid ;
+    border-width: 0.1px 0px;
+    border-color: #d0d0d0;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav ul li a{
+    display: block;
+    text-align: center;
+    color: #666;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px 15px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+nav ul li a:hover{
+    color: #313131;
+   
+}
+
+.post-date{
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 20px 10px;
+}
+
+main h2 a{
+    color: #666;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+a{
+    text-decoration: none;
+    color: #666;
+
+}
+
