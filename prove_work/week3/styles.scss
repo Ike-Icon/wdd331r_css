@@ -1,0 +1,67 @@
+//Variables for the docs
+//colors
+$body-background-color: #2b4246;
+$form-background-color: #cacaaa;
+$input-color: #ffffff;
+$headlines-color: #ffffff;
+$break-small: 20em;
+$break-medium: 31em;
+$break-large: 60em;
+
+@mixin flex-container($axis, $wrap: nowrap) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: $axis $wrap;
+  -ms-flex-flow: $axis $wrap;
+  flex-flow: $axis $wrap;
+}
+
+@mixin center {
+  width: 90%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin center {
+  width: 90%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: $body-background-color;
+  h1 {
+    color: $headlines-color;
+  }
+}
+
+#contactform {
+  background-color: $form-background-color;
+  input,
+  textarea {
+    background-color: $input-color;
+    flex: 2;
+    color: $body-background-color;
+  }
+
+  @media (min-width: $break-small) {
+    & {
+      width: 90%;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+fieldset > div {
+  @include flex-container(row, wrap);
+}
+
+#content {
+  @include center;
+}

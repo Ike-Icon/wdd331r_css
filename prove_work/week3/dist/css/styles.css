@@ -1,0 +1,36 @@
+body {
+  background-color: #2b4246;
+}
+body h1 {
+  color: #ffffff;
+}
+
+#contactform {
+  background-color: #cacaaa;
+}
+#contactform input,
+#contactform textarea {
+  background-color: #ffffff;
+  flex: 2;
+  color: #2b4246;
+}
+@media (min-width: 20em) {
+  #contactform {
+    width: 90%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+fieldset > div {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#content {
+  width: 90%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=styles.css.map */
