@@ -3,7 +3,10 @@
 $body-background-color: #2b4246;
 $form-background-color: #cacaaa;
 $input-color: #ffffff;
+$text-color:#2b4246;
 $headlines-color: #ffffff;
+
+//set breakpoint sizes
 $break-small: 20em;
 $break-medium: 31em;
 $break-large: 60em;
@@ -13,24 +16,18 @@ $break-large: 60em;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   -webkit-flex-flow: $axis $wrap;
   -ms-flex-flow: $axis $wrap;
   flex-flow: $axis $wrap;
 }
 
-@mixin center {
-  width: 90%;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
+@mixin minxin-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
 
-@mixin center {
-  width: 90%;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 body {
   background-color: $body-background-color;
@@ -39,29 +36,34 @@ body {
   }
 }
 
-#contactform {
+fieldset{
   background-color: $form-background-color;
+  div{
+    padding: 4px;
+    @include flex-container(row, wrap);
+  }
+}
+
+#contactform {
+  display: block;
+  
   input,
   textarea {
     background-color: $input-color;
-    flex: 2;
-    color: $body-background-color;
+    color: $text-color;
+    padding: 10px;
+    
   }
 
   @media (min-width: $break-small) {
     & {
       width: 90%;
-      max-width: 700px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
   }
 }
 
-fieldset > div {
-  @include flex-container(row, wrap);
-}
 
-#content {
-  @include center;
-}
+
