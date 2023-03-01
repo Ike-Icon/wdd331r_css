@@ -1,0 +1,126 @@
+/* Variables */
+$color-1: #D3D3D3; //light gray
+$color-2: #808080; // gray
+$color-3: #000000; // Black
+$color-4: #ffffff; // White
+
+// Mixins
+@mixin size($width: 40px, $height: 3px, $background: $color-1) {
+  width: $width;
+  height: $height;
+  background-color: $background;
+}
+
+@mixin display($position: absolute, $display: block) {
+  position: $position;
+  display: $display;
+}
+
+/* *, body, html */
+* { 
+  box-sizing: border-box;
+}
+
+body, html {
+  @include size(100%, 100%, none);
+  margin: 0;
+  position: absolute;
+}
+
+/* .menu is the black background for the slide out menu. When it is unclicked, it is translated off the screen to the left. */
+.menu {
+  @include size(250px, 100%, $color-3);
+  @include display();
+  padding: 10px;
+  transform: translateX(-250px);
+  transition: transform .2s ease-in;  
+}
+/* When clicked, the menu background slides out to the right.*/
+.open2 {
+  transform: translateX(0px);
+}
+
+/* hamburger icon. Starts out light gray, hover state is gray. */
+.menu-icon {
+  @include size(40px, 30px, none);
+  transition: transform .2s ease-in;
+  transform: translate(10px, 10px);
+  z-index: 200;
+  & span {
+    @include size();
+    @include display(relative);
+    transition: transform .2s ease-in;
+    &::before {
+      content: "";
+      @include size();
+      position: absolute;
+      transform: translateY(10px);
+      transition: transform .2s ease-in;   
+    }
+    &::after {
+      content: "";
+      @include size();
+      transform: translateY(20px);
+      position: absolute;
+    } 
+  }
+  &:hover > span {
+    background-color: $color-2;
+    &::before {
+      background-color: $color-2;
+    }
+    &::after {
+      background-color: $color-2;
+    }
+  }
+}
+
+/* Applies to menu-item onclick through Javascript function toggleNav. Changes span and span::before to white, Changes span::after opacity to 0, and thranslates them and rotates to make an x. */  
+.open  {
+  transform: translate(200px, 20px);
+  & span {
+    background-color: white;
+    transform: rotate(45deg);
+  }  
+  & span::before {
+    transform: rotate(-90deg);
+    background-color: white;
+  }
+  & span::after {
+    opacity: 0;
+  }
+  & span:hover, & span:hover::before, & span:hover::after {
+  background-color: $color-1;
+  }
+}
+
+/* Styling of nav list. When menu-icon is unclicked, list doesn't appear. */
+ul {
+  color: $color-2;
+  list-style: none;
+  font-size: 1.4em;
+  line-height: 2em;
+  @include display(absolute, none); 
+  & li:hover {
+  
+  }
+}
+/* When menu-icon is clicked, list will appear. */
+.open3 {
+  display: block;
+  transform: translateX(30px);
+}
+
+/* Main section. When menu icon is unclicked, main section appears normal */
+main {
+  padding: 40px 10px;  
+  @include display();
+  @include size(100%, 100%, none);
+  z-index: -1;
+  transform: translateY(-30px); 
+}
+/* When menu-icon is clicked, main section moves to the right and grays out.*/
+.open4 {
+  background-color: $color-2;
+  z-index: -1;
+}
