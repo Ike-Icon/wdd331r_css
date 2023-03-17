@@ -1,0 +1,34 @@
+body {
+  background-color: #2b4246;
+}
+body h1 {
+  color: #ffffff;
+}
+
+fieldset {
+  background-color: #cacaaa;
+}
+fieldset div {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+}
+
+#contactform {
+  display: block;
+}
+#contactform input,
+#contactform textarea {
+  background-color: #ffffff;
+  color: #2b4246;
+  padding: 10px;
+}
+@media (min-width: 20em) {
+  #contactform {
+    width: 90%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
