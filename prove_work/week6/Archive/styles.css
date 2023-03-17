@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+.card-grid {
+    width: 900px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    font-style: normal;
+    font-weight: 100;
+    font-family: arial, sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #0d2636;
+    border-radius: 7px;
+
+}
+
+.card img {
+    height: 100%;
+}
+
+
+/* row flex  */
+.row-grid {
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #0d2636;
+}
+
+
+
+/* column flex  */
+.col-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: row;
+   border: 1px solid #0d2636;
+   margin-top: 20px;
+}
+.col-grid div img {
+    height: 100%;
+}
